@@ -13,6 +13,64 @@
   }
 }
 
+.wrapper{
+  background-color: #171718;
+  min-height: 1000px;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: futura;
+}
+
+.imageWrapper{
+  max-width: 210px;
+  max-height: 210px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 3px;;
+}
+
+img{
+  width: 100%;
+}
+
+.navigation{
+  padding: 20px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.songGallery{
+  padding: 30px;
+}
+
+.playlistCard{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.selection{
+  margin: 2%;
+  max-width: 60%;
+}
+
+.playlist{
+  padding: 20px;
+}
+
+.IconWrap{
+  margin: 10px;
+}
+
+h3, h4{
+  padding: 10px;
+  color: white;
+}
+
+h1{
+  padding-bottom: 20px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,5 +92,18 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 992px) {
+
+  .selection{
+    max-width: 100%;
+  }
+
+  .wrapper{
+    flex-direction: column;
+    align-items: center;
   }
 }
