@@ -23,7 +23,7 @@ export default class DisplayList extends React.Component {
                     <Card.Body>
                         <Card.Title>{this.props.song.title}</Card.Title>
                         <Card.Text>
-                            Artist: {this.props.song.artist}
+                            Artist: {this.props.song.artist} {this.state.title}
                         </Card.Text>
                         <Card.Text>
                             Language: {this.props.song.language}

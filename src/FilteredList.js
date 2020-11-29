@@ -97,7 +97,7 @@ export default class FilteredList extends React.Component {
                     </Nav>
                 </div>
                 <div className = "songGallery">
-                <DisplayList list={this.props.list.filter(this.matchesFilters).sort(this.sortComparison)} addSong={this.props.addSong} />
+                <DisplayList list={this.props.list.filter(this.matchesFilters).sort(this.sortComparison)} addSong={this.props.addSong} language ={this.state.language} />
                 </div>
             </div>
         )
