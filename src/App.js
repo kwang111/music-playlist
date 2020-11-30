@@ -41,6 +41,7 @@ export default class App extends React.Component {
     }
   }
 
+  // Function to add a song to myPlaylist given an item
   addSong = item => {
     const newSong = {
       title: item.title,
@@ -58,12 +59,14 @@ export default class App extends React.Component {
     this.calculateTime(myPlaylist);
   }
 
+  // Function to delete a song to myPlaylist given an key
   deleteSong = key => {
     const myPlaylist = this.state.myPlaylist.filter(song => song.key != key);
     this.setState({ myPlaylist });
     this.calculateTime(myPlaylist);
   }
 
+  // Function to aggregate the total play time of myPlaylist
   calculateTime = (list) =>{
     var total = 0;
     for (var i = 0; i < list.length; i++){
@@ -74,6 +77,7 @@ export default class App extends React.Component {
     })
   }
 
+  // Render to display selection screen and user's playlist
   render() {
     return (
       <div className="wrapper">

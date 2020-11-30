@@ -13,6 +13,7 @@ export default class Playlist extends React.Component {
         };
     }
 
+    // Function to create a playlist card based on the item given
     playlistCard = item => {
         return (
             <div className="playlistCard">
@@ -39,6 +40,7 @@ export default class Playlist extends React.Component {
         )
     }
 
+    // Render user's myPlaylist filled with playlist cards
     render() {
         return (
             <div>

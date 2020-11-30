@@ -13,6 +13,7 @@ export default class DisplayList extends React.Component {
 
     }
 
+    // Function to make a card from a given item
     makeCard = item => {
         return (
             <div className = "card-wrapper">
@@ -43,6 +44,8 @@ export default class DisplayList extends React.Component {
             </div>
         )
     }
+
+    // Renders the list of songs to choose from
 
     render() {
         return (
