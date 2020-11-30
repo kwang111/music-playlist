@@ -1,3 +1,47 @@
+#MY README#
+Your README should  detail your application’s architecture: 
+Organization of your components
+How data is passed down through your components
+How user interactions can trigger changes in the state of components
+Application architecture:
+
+Components/How Data is Passed/User Interactions & States: 
+
+- App: 
+Props Recieved: None
+Props Passed: -> FilteredList songs(arraylist), addSong (function)
+              -> Playlist myPlaylist(arraylist), deleteSong (function)
+
+The overarching react app. It includes the constant array of songs. It has the functions addSong (adds a Song to the user's created playlist called myPlaylist), deleteSong (removes a Song from the user's created playlist called myPlaylist), and calculateTime (which takes the users playlist called myPlaylist and calculates the total duration of the songs in that playlist. It helps with the aggregation). The render function of the app uses a Wrapper and has two sub-sections one called selection and one called playlist. The selection creates a FilteredList component to display the songs to choose from. The songs array and the addSong function is passed as props into FilteredList. The playlist section displays the aggregated duration of myPlaylist and creates a Playlist component to display the array myPlaylist which the users add and remove songs from. The myPlaylist array and deleteSong function is passed as props into Playlist.
+
+-FilteredList: 
+Props Recieved: list(arraylist), addSong (function)
+Props Passed: -> DisplayList list(arraylist), addSong (function)
+
+This component handles rendering a nav bar of filters and sort options. This component will pass a filtered and sorted list prop down to DisplayList. It also further passes down the prop (function) called addSong which it recieved as a prop from App. State variables language, singer, and sort are updated through user actions clicking on the nav-bar items. Once these state state variables are changed, the FilteredList re-renders passing down the new filtered/sorted list into DisplayList to display properly the new state of the App.
+
+-DisplayList: 
+Props Recieved: list(arraylist), addSong (function)
+Props Passed: None
+
+This component displays the song-cards avaliable to be selected by the user. It maps each item from the recieved prop called list to the function makeCard which formate the item in the list into a "Song Card" format showing the image, title, artist, language, singer, and duration (the footer). I used react-bootstrap here with CardColumns and Card. The card also has a button called Add Song which calls on the prop (function) addSong passed dowm from App to FilteredList to DisplayList. The addSong function will take the item information of that song card and create a new entry in myPlaylist with that information. In addition, a key is attached to each entry of myPlaylist. This will be used to remove songs from myPlaylist. Since myPlaylist is a state variable, this tells Playlist to re-render the user-generated playlist.
+
+-Playlist: 
+Props Recieved: list(arraylist), deleteSong (function)
+Props Passed: None
+
+This component renders the user-generated music playlist. It recieves the state variable myPlaylist from App as a prop and renders each item in that list into a "Playlist Song Card" by mapping the function PlaylistCard to each item in this.props.list. It has a button called deleteSong which will call on the prop (function) deleteSong passed down from App to modify the array "myPlaylist" which is passed in. When the User clicks on the button, it will pass in the key for the item in myPlaylist for deleteSong function in App.
+
+
+Known Bug:
+Cards will not display properly until you navigate to filter combination: Chinese & Other. After going to that filter, you can return to the other filter options and everything will work properly. I tried to resolve the bug but was unable to do so by myself.
+
+
+
+
+
+
+#Items From React App Package#
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

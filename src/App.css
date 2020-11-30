@@ -33,6 +33,16 @@ img{
   width: 100%;
 }
 
+CardDeck{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card-wrapper{
+  max-width: 33%;
+  padding-bottom: 20px;
+}
+
 .navigation{
   padding: 20px;
   background-color: white;
@@ -95,8 +105,20 @@ h1{
   }
 }
 
+/* Tablet (Portrait) ----------- */
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .selection{
+    max-width: 100%;
+  }
+
+  .wrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 600px) {
 
   .selection{
     max-width: 100%;
@@ -105,5 +127,9 @@ h1{
   .wrapper{
     flex-direction: column;
     align-items: center;
+  }
+
+  .card-wrapper{
+    max-width: 100%;
   }
 }
